@@ -1,0 +1,36 @@
+{
+  "name": "react-native-simple-gauge",
+  "version": "0.0.1",
+  "description": "React Native component for gauge",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nerdyfactory/react-native-simple-gauge.git"
+  },
+  "keywords": [
+    "react",
+    "react-native",
+    "react-component",
+    "progress",
+    "chart",
+    "react-art",
+    "art",
+    "gauge"
+  ],
+  "author": {
+    "name": "vinay",
+    "email": "vinay@nerdyfactory.com"
+  },
+  "original_author": {
+    "name": "Bart Gryszko",
+    "email": "b@gryszko.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nerdyfactory/react-native-simple-gauge/issues"
+  },
+  "homepage": "https://github.com/nerdyfactory/react-native-simple-gauge",
+  "dependencies": {
+    "art": "^0.10.0"
+  }
+}

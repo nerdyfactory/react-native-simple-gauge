@@ -3,7 +3,11 @@
 Gauge progress module for React Native  
 
 Based on [react-native-circular-progress](https://github.com/bgryszko/react-native-circular-progress)  
+
 ![image](screenshot.gif)  
+
+## Install  
+`npm i --save react-native-simple-gauge`  
 
 ## Usage  
 

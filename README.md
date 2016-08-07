@@ -7,8 +7,8 @@ Based on [react-native-circular-progress](https://github.com/bgryszko/react-nati
 ![image](screenshot.gif)  
 
 ## Install  
-`npm i --save react-native-simple-gauge`  
-
+1) `npm i --save react-native-simple-gauge`  
+2) Link the ART library to your ReactNative project ([how to link a library](https://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)). You'll find the React ART library in `node_modules/react-native/Libraries/ART/ART.xcodeproj`
 ## Usage  
 
 ```js

@@ -23,7 +23,8 @@ import { AnimatedGaugeProgress, GaugeProgress } from 'react-native-simple-gauge'
   rotation={90}
   cropDegree={90}
   tintColor="#4682b4"
-  backgroundColor="#b0c4de" />
+  backgroundColor="#b0c4de"
+  strokeCap="circle" />
 ```  
 
 Use `cropDegree` to vary the size of arc  

@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/gregsqueeb/react-native-simple-gauge.git"
+    "url": "git+ssh://git@github.com/nerdyfactory/react-native-simple-gauge.git"
   },
   "keywords": [
     "react",

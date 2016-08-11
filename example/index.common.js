@@ -76,7 +76,8 @@ class example extends Component {
               rotation={90}
               cropDegree={180}
               tintColor="#4682b4"
-              backgroundColor="#b0c4de" />
+              backgroundColor="#b0c4de"
+              strokeCap="circle" />
           </View>
         </View>
       </View>

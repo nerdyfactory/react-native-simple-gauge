@@ -34,6 +34,47 @@ import { AnimatedGaugeProgress, GaugeProgress } from 'react-native-simple-gauge'
 
 Use `cropDegree` to vary the size of arc  
 
+Refer to below example to add something inside gauge.
+```js
+const size = 200;
+const width = 15;
+const cropDegree = 90;
+const textOffset = width;
+const textWidth = size - (textOffset*2);
+const textHeight = size*(1 - cropDegree/360) - (textOffset*2);
+```
+
+```jsx
+      <GaugeProgress
+        size={size}
+        width={width}
+        fill={this.state.fill}
+        cropDegree={cropDegree}
+        ......
+      >
+        {(fill) => (
+          <View style={styles.textView}>
+            <Text style={styles.text}>hello</Text>
+          </View>
+        )}
+      </GaugeProgress>
+```
+
+```js
+  textView: {
+    position: 'absolute',
+    top: textOffset,
+    left: textOffset,
+    width: textWidth,
+    height: textHeight,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  text: {
+    fontSize: 20,
+  },
+```
+
 
 ## License
 

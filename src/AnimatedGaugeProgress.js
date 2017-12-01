@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Animated, ViewPropTypes } from 'react-native';
-import CircularProgress from './CircularProgress';
-const AnimatedProgress = Animated.createAnimatedComponent(CircularProgress);
+import GaugeProgress from './GaugeProgress';
+const AnimatedProgress = Animated.createAnimatedComponent(GaugeProgress);
 
-export default class AnimatedCircularProgress extends React.Component {
+export default class AnimatedGaugeProgress extends React.Component {
 
   constructor(props) {
     super(props);
@@ -55,7 +55,7 @@ export default class AnimatedCircularProgress extends React.Component {
   }
 }
 
-AnimatedCircularProgress.propTypes = {
+AnimatedGaugeProgress.propTypes = {
   style: ViewPropTypes.style,
   size: PropTypes.number.isRequired,
   fill: PropTypes.number,
@@ -67,7 +67,7 @@ AnimatedCircularProgress.propTypes = {
   friction: PropTypes.number
 }
 
-AnimatedCircularProgress.defaultProps = {
+AnimatedGaugeProgress.defaultProps = {
   tension: 7,
   friction: 10
 };

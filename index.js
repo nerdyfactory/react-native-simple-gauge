@@ -1,5 +1,7 @@
-import CircularProgress from './src/CircularProgress';
-import AnimatedCircularProgress from './src/AnimatedCircularProgress';
+import GaugeProgress from './src/GaugeProgress';
+import AnimatedGaugeProgress from './src/AnimatedGaugeProgress';
 
-exports.GaugeProgress = CircularProgress;
-exports.AnimatedGaugeProgress = AnimatedCircularProgress;
+export {
+  GaugeProgress,
+  AnimatedGaugeProgress
+}

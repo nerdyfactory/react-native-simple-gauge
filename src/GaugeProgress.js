@@ -4,7 +4,7 @@ import { View, Platform, ViewPropTypes } from 'react-native';
 import { Surface, Shape, Path, Group } from '../../react-native/Libraries/ART/ReactNativeART';
 import MetricsPath from 'art/metrics/path';
 
-export default class CircularProgress extends React.Component {
+export default class GaugeProgress extends React.Component {
 
   circlePath(cx, cy, r, startDegree, endDegree) {
 
@@ -57,7 +57,7 @@ export default class CircularProgress extends React.Component {
   }
 }
 
-CircularProgress.propTypes = {
+GaugeProgress.propTypes = {
   style: ViewPropTypes.style,
   size: PropTypes.number.isRequired,
   fill: PropTypes.number.isRequired,
@@ -71,7 +71,7 @@ CircularProgress.propTypes = {
   children: PropTypes.func
 }
 
-CircularProgress.defaultProps = {
+GaugeProgress.defaultProps = {
   tintColor: 'black',
   backgroundColor: '#e4e4e4',
   rotation: 90,

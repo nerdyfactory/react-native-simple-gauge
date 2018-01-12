@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Animated, ViewPropTypes } from 'react-native';
+import { View, Animated, ViewPropTypes, AppState,Easing } from 'react-native';
 import GaugeProgress from './GaugeProgress';
 const AnimatedProgress = Animated.createAnimatedComponent(GaugeProgress);
 
@@ -9,12 +9,18 @@ export default class AnimatedGaugeProgress extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+       appState: AppState.currentState,
       chartFillAnimation: new Animated.Value(props.prefill || 0)
     }
   }
 
-  componentDidMount() {
-    this.animateFill();
+  componentDidMount() { 
+   this.animateFill();
+   AppState.addEventListener('change', this.handleAppStateChange);
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this.handleAppStateChange);
   }
 
   componentDidUpdate(prevProps) {
@@ -22,9 +28,22 @@ export default class AnimatedGaugeProgress extends React.Component {
       this.animateFill();
     }
   }
+  
+   handleAppStateChange = nextAppState => {
+    if (this.state.appState.match(/inactive|background/) &&
+        nextAppState === 'active') {
+      this.setState({
+        chartFillAnimation: new Animated.Value(this.props.prefill || 0)
+      });
+      this.animateFill();
+    }
+    this.setState({ appState: nextAppState });
+  }
+
+
 
   animateFill() {
-    const { tension, friction } = this.props;
+    const { tension, friction,onAnimationComplete } = this.props;
 
     Animated.spring(
       this.state.chartFillAnimation,
@@ -33,14 +52,16 @@ export default class AnimatedGaugeProgress extends React.Component {
         tension,
         friction
       }
-    ).start();
+    ).start(onAnimationComplete);
   }
   
   performLinearAnimation(toValue, duration) {
+    const { onLinearAnimationComplete } = this.props;
     Animated.timing(this.state.chartFillAnimation, {
-      toValue: toValue,
+       toValue: toValue,
+      easing: Easing.linear,
       duration: duration
-    }).start();
+    }).start(onLinearAnimationComplete);
   }
 
   render() {
@@ -64,7 +85,9 @@ AnimatedGaugeProgress.propTypes = {
   tintColor: PropTypes.string,
   backgroundColor: PropTypes.string,
   tension: PropTypes.number,
-  friction: PropTypes.number
+  friction: PropTypes.number,
+   onAnimationComplete: PropTypes.func,
+  onLinearAnimationComplete: PropTypes.func,
 }
 
 AnimatedGaugeProgress.defaultProps = {

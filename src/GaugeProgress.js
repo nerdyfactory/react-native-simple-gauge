@@ -49,9 +49,7 @@ export default class GaugeProgress extends React.Component {
                    strokeCap={strokeCap}/>
           </Group>
         </Surface>
-        {
-          children && children(fill)
-        }
+        {children}
       </View>
     )
   }
@@ -67,9 +65,8 @@ GaugeProgress.propTypes = {
   strokeCap: PropTypes.string,
   backgroundColor: PropTypes.string,
   rotation: PropTypes.number,
-  cropDegree: PropTypes.number,
-  children: PropTypes.func
-}
+  cropDegree: PropTypes.number
+};
 
 GaugeProgress.defaultProps = {
   tintColor: 'black',
@@ -77,4 +74,4 @@ GaugeProgress.defaultProps = {
   rotation: 90,
   cropDegree: 90,
   strokeCap: 'butt',
-}
+};

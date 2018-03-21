@@ -53,11 +53,9 @@ const textHeight = size*(1 - cropDegree/360) - (textOffset*2);
         cropDegree={cropDegree}
         ......
       >
-        {(fill) => (
-          <View style={styles.textView}>
-            <Text style={styles.text}>hello</Text>
-          </View>
-        )}
+        <View style={styles.textView}>
+          <Text style={styles.text}>hello</Text>
+        </View>
       </GaugeProgress>
 ```
 

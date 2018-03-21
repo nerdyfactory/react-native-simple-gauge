@@ -29,14 +29,14 @@ export default class GaugeProgress extends React.Component {
     const backgroundPath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, (360 * 99.9 / 100) - cropDegree);
 
     const fill = this.extractFill(this.props.fill);
-    const circlePath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, ((360 * 99.9 / 100) - cropDegree) * fill / 100 );
+    const circlePath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, ((360 * 99.9 / 100) - cropDegree) * fill / 100);
 
     return (
       <View style={style}>
         <Surface
           width={size}
           height={size}>
-          <Group rotation={rotation + cropDegree/2} originX={size/2} originY={size/2}>
+          <Group rotation={rotation + cropDegree / 2} originX={size / 2} originY={size / 2}>
             <Shape d={backgroundPath}
                    strokeDash={stroke}
                    stroke={backgroundColor}
@@ -49,7 +49,7 @@ export default class GaugeProgress extends React.Component {
                    strokeCap={strokeCap}/>
           </Group>
         </Surface>
-        {children}
+        {typeof children === 'function' ? children() : children}
       </View>
     )
   }
@@ -65,7 +65,8 @@ GaugeProgress.propTypes = {
   strokeCap: PropTypes.string,
   backgroundColor: PropTypes.string,
   rotation: PropTypes.number,
-  cropDegree: PropTypes.number
+  cropDegree: PropTypes.number,
+  children: PropTypes.oneOfType[PropTypes.func, PropTypes.object, PropTypes.array]
 };
 
 GaugeProgress.defaultProps = {

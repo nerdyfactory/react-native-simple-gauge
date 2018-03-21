@@ -49,7 +49,7 @@ export default class GaugeProgress extends React.Component {
                    strokeCap={strokeCap}/>
           </Group>
         </Surface>
-        {typeof children === 'function' ? children() : children}
+        {typeof children === 'function' ? children(fill) : children}
       </View>
     )
   }

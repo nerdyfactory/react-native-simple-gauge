@@ -17,6 +17,9 @@
     "art",
     "gauge"
   ],
+  "scripts": {
+    "test": "jest"
+  },
   "author": {
     "name": "vinay",
     "email": "vinay@nerdyfactory.com"
@@ -32,5 +35,26 @@
   "homepage": "https://github.com/nerdyfactory/react-native-simple-gauge",
   "dependencies": {
     "art": "^0.10.0"
+  },
+  "devDependencies": {
+    "react": "^16.2.0",
+    "react-native": "^0.54.2",
+    "babel-jest": "^23.0.0-alpha.0",
+    "babel-preset-react-native": "^4.0.0",
+    "jest": "^22.4.2",
+    "react-test-renderer": "16.3.0-alpha.1"
+  },
+  "jest": {
+    "preset": "react-native",
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/example/"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/example/node_modules"
+    ],
+    "moduleNameMapper": {
+      "ReactNativeART": "<rootDir>/node_modules/react-native/Libraries/ART/ReactNativeART"
+    }
   }
 }

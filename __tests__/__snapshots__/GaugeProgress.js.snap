@@ -1,0 +1,392 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<View
+  style={undefined}
+>
+  <ARTSurfaceView
+    style={
+      Array [
+        undefined,
+        Object {
+          "height": 0,
+          "width": 0,
+        },
+      ]
+    }
+  >
+    <ARTGroup
+      opacity={1}
+      transform={
+        Array [
+          -0.7071067811865475,
+          0.7071067811865476,
+          -0.7071067811865476,
+          -0.7071067811865475,
+          0,
+          0,
+        ]
+      }
+    >
+      <ARTShape
+        d={
+          Array [
+            0,
+            NaN,
+            NaN,
+            4,
+            NaN,
+            NaN,
+            NaN,
+            0,
+            4.70610579507751,
+            1,
+          ]
+        }
+        fill={null}
+        opacity={1}
+        stroke={
+          Array [
+            0.8941176470588236,
+            0.8941176470588236,
+            0.8941176470588236,
+            1,
+          ]
+        }
+        strokeCap={0}
+        strokeDash={null}
+        strokeJoin={1}
+        strokeWidth={1}
+        transform={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      />
+      <ARTShape
+        d={
+          Array [
+            0,
+            NaN,
+            NaN,
+            4,
+            NaN,
+            NaN,
+            NaN,
+            0,
+            NaN,
+            1,
+          ]
+        }
+        fill={null}
+        opacity={1}
+        stroke={
+          Array [
+            0,
+            0,
+            0,
+            1,
+          ]
+        }
+        strokeCap={0}
+        strokeDash={null}
+        strokeJoin={1}
+        strokeWidth={1}
+        transform={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      />
+    </ARTGroup>
+  </ARTSurfaceView>
+</View>
+`;
+
+exports[`renders correctly with children components 1`] = `
+<View
+  style={undefined}
+>
+  <ARTSurfaceView
+    style={
+      Array [
+        undefined,
+        Object {
+          "height": 200,
+          "width": 200,
+        },
+      ]
+    }
+  >
+    <ARTGroup
+      opacity={1}
+      transform={
+        Array [
+          -0.7071067811865475,
+          0.7071067811865476,
+          -0.7071067811865476,
+          -0.7071067811865475,
+          241.4213562373095,
+          99.99999999999999,
+        ]
+      }
+    >
+      <ARTShape
+        d={
+          Array [
+            0,
+            192.5,
+            100,
+            4,
+            100,
+            100,
+            92.5,
+            0,
+            4.70610579507751,
+            1,
+          ]
+        }
+        fill={null}
+        opacity={1}
+        stroke={
+          Array [
+            0.8941176470588236,
+            0.8941176470588236,
+            0.8941176470588236,
+            1,
+          ]
+        }
+        strokeCap={0}
+        strokeDash={null}
+        strokeJoin={1}
+        strokeWidth={15}
+        transform={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      />
+      <ARTShape
+        d={
+          Array [
+            0,
+            192.5,
+            100,
+            4,
+            100,
+            100,
+            92.5,
+            0,
+            2.353052897538755,
+            1,
+          ]
+        }
+        fill={null}
+        opacity={1}
+        stroke={
+          Array [
+            0,
+            0,
+            0,
+            1,
+          ]
+        }
+        strokeCap={0}
+        strokeDash={null}
+        strokeJoin={1}
+        strokeWidth={15}
+        transform={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      />
+    </ARTGroup>
+  </ARTSurfaceView>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 120,
+        "justifyContent": "center",
+        "left": 15,
+        "position": "absolute",
+        "top": 15,
+        "width": 170,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 20,
+        }
+      }
+    >
+      hello
+    </Text>
+  </View>
+</View>
+`;
+
+exports[`renders correctly with children function 1`] = `
+<View
+  style={undefined}
+>
+  <ARTSurfaceView
+    style={
+      Array [
+        undefined,
+        Object {
+          "height": 200,
+          "width": 200,
+        },
+      ]
+    }
+  >
+    <ARTGroup
+      opacity={1}
+      transform={
+        Array [
+          -0.7071067811865475,
+          0.7071067811865476,
+          -0.7071067811865476,
+          -0.7071067811865475,
+          241.4213562373095,
+          99.99999999999999,
+        ]
+      }
+    >
+      <ARTShape
+        d={
+          Array [
+            0,
+            192.5,
+            100,
+            4,
+            100,
+            100,
+            92.5,
+            0,
+            4.70610579507751,
+            1,
+          ]
+        }
+        fill={null}
+        opacity={1}
+        stroke={
+          Array [
+            0.8941176470588236,
+            0.8941176470588236,
+            0.8941176470588236,
+            1,
+          ]
+        }
+        strokeCap={0}
+        strokeDash={null}
+        strokeJoin={1}
+        strokeWidth={15}
+        transform={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      />
+      <ARTShape
+        d={
+          Array [
+            0,
+            192.5,
+            100,
+            4,
+            100,
+            100,
+            92.5,
+            0,
+            2.353052897538755,
+            1,
+          ]
+        }
+        fill={null}
+        opacity={1}
+        stroke={
+          Array [
+            0,
+            0,
+            0,
+            1,
+          ]
+        }
+        strokeCap={0}
+        strokeDash={null}
+        strokeJoin={1}
+        strokeWidth={15}
+        transform={
+          Array [
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+          ]
+        }
+      />
+    </ARTGroup>
+  </ARTSurfaceView>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "height": 120,
+        "justifyContent": "center",
+        "left": 15,
+        "position": "absolute",
+        "top": 15,
+        "width": 170,
+      }
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 20,
+        }
+      }
+    >
+      hello
+    </Text>
+  </View>
+</View>
+`;

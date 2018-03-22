@@ -66,7 +66,7 @@ GaugeProgress.propTypes = {
   backgroundColor: PropTypes.string,
   rotation: PropTypes.number,
   cropDegree: PropTypes.number,
-  children: PropTypes.oneOfType[PropTypes.func, PropTypes.object, PropTypes.array]
+  children: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.array])
 };
 
 GaugeProgress.defaultProps = {

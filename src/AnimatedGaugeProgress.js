@@ -3,19 +3,25 @@ import PropTypes from 'prop-types';
 import { View, Animated, ViewPropTypes, AppState,Easing } from 'react-native';
 import GaugeProgress from './GaugeProgress';
 const AnimatedProgress = Animated.createAnimatedComponent(GaugeProgress);
+const ActiveState = "active"
 
 export default class AnimatedGaugeProgress extends React.Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      appState: AppState.currentState,
-      chartFillAnimation: new Animated.Value(props.prefill || 0)
-    }
+  state = {
+    chartFillAnimation: new Animated.Value(this.props.prefill || 0)
   }
 
   componentDidMount() { 
     this.animateFill();
+    AppState.addEventListener('change', this._handleAppStateChange);
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this._handleAppStateChange);
+  }
+
+  _handleAppStateChange = (nextAppState) => {
+    if (nextAppState === ActiveState) this.animateFill();
   }
 
   componentDidUpdate(prevProps) {
@@ -26,15 +32,12 @@ export default class AnimatedGaugeProgress extends React.Component {
 
   animateFill() {
     const { tension, friction, onAnimationComplete, prefill } = this.props;
-    const { chartFillAnimation } = this.state
 
-    if (!chartFillAnimation) {
-      var newChartFillAnimation = new Animated.Value(prefill || 0)
-      this.setState({chartFillAnimation: newChartFillAnimation})
-    }
+    var chartFillAnimation = new Animated.Value(prefill || 0)
+    this.setState({chartFillAnimation})
 
     Animated.spring(
-      chartFillAnimation || newChartFillAnimation,
+      chartFillAnimation,
       {
         toValue: this.props.fill,
         tension,
@@ -43,15 +46,6 @@ export default class AnimatedGaugeProgress extends React.Component {
     ).start(onAnimationComplete);
   }
   
-  performLinearAnimation(toValue, duration) {
-    const { onLinearAnimationComplete } = this.props;
-    Animated.timing(this.state.chartFillAnimation, {
-      toValue: toValue,
-      easing: Easing.linear,
-      duration: duration
-    }).start(onLinearAnimationComplete);
-  }
-
   render() {
     const { fill, prefill, ...other } = this.props;
 

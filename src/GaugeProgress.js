@@ -1,10 +1,27 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { View, Platform, ViewPropTypes } from 'react-native';
+import { View, Platform, ViewPropTypes, AppState } from 'react-native';
 import { Surface, Shape, Path, Group } from '../../react-native/Libraries/ART/ReactNativeART';
 import MetricsPath from 'art/metrics/path';
+const ActiveState = "active"
 
 export default class GaugeProgress extends React.Component {
+
+  state = {
+    show: true
+  }
+
+  componentDidMount() {
+    AppState.addEventListener('change', this._handleAppStateChange);
+  }
+
+  componentWillUnmount() {
+    AppState.removeEventListener('change', this._handleAppStateChange);
+  }
+
+  _handleAppStateChange = (nextAppState) => {
+    this.setState({show: nextAppState === ActiveState})
+  }
 
   circlePath(cx, cy, r, startDegree, endDegree) {
 
@@ -30,25 +47,28 @@ export default class GaugeProgress extends React.Component {
 
     const fill = this.extractFill(this.props.fill);
     const circlePath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, ((360 * 99.9 / 100) - cropDegree) * fill / 100);
-
+    const { show } =  this.state
     return (
       <View style={style}>
-        <Surface
-          width={size}
-          height={size}>
-          <Group rotation={rotation + cropDegree / 2} originX={size / 2} originY={size / 2}>
-            <Shape d={backgroundPath}
-                   strokeDash={stroke}
-                   stroke={backgroundColor}
-                   strokeWidth={width}
-                   strokeCap={strokeCap}/>
-            <Shape d={circlePath}
-                   strokeDash={stroke}
-                   stroke={tintColor}
-                   strokeWidth={width}
-                   strokeCap={strokeCap}/>
-          </Group>
-        </Surface>
+        {!!show &&
+          <Surface
+            width={size}
+            height={size}
+            >
+            <Group rotation={rotation + cropDegree / 2} originX={size / 2} originY={size / 2}>
+              <Shape d={backgroundPath}
+                     strokeDash={stroke}
+                     stroke={backgroundColor}
+                     strokeWidth={width}
+                     strokeCap={strokeCap}/>
+              <Shape d={circlePath}
+                     strokeDash={stroke}
+                     stroke={tintColor}
+                     strokeWidth={width}
+                     strokeCap={strokeCap}/>
+            </Group>
+          </Surface>
+        }
         {typeof children === 'function' ? children(fill) : children}
       </View>
     )

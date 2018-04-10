@@ -1,7 +1,4 @@
-import GaugeProgress from './src/GaugeProgress';
-import AnimatedGaugeProgress from './src/AnimatedGaugeProgress';
+import GaugeProgress from "./src/GaugeProgress";
+import AnimatedGaugeProgress from "./src/AnimatedGaugeProgress";
 
-export {
-  GaugeProgress,
-  AnimatedGaugeProgress
-}
+export { GaugeProgress, AnimatedGaugeProgress };

@@ -1,28 +1,27 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { View, Animated, ViewPropTypes, AppState,Easing } from 'react-native';
-import GaugeProgress from './GaugeProgress';
+import React from "react";
+import PropTypes from "prop-types";
+import { View, Animated, ViewPropTypes, AppState, Easing } from "react-native";
+import GaugeProgress from "./GaugeProgress";
 const AnimatedProgress = Animated.createAnimatedComponent(GaugeProgress);
-const ActiveState = "active"
+const ActiveState = "active";
 
 export default class AnimatedGaugeProgress extends React.Component {
-
   state = {
     chartFillAnimation: new Animated.Value(this.props.prefill || 0)
-  }
+  };
 
-  componentDidMount() { 
+  componentDidMount() {
     this.animateFill();
-    AppState.addEventListener('change', this._handleAppStateChange);
+    AppState.addEventListener("change", this._handleAppStateChange);
   }
 
   componentWillUnmount() {
-    AppState.removeEventListener('change', this._handleAppStateChange);
+    AppState.removeEventListener("change", this._handleAppStateChange);
   }
 
-  _handleAppStateChange = (nextAppState) => {
+  _handleAppStateChange = nextAppState => {
     if (nextAppState === ActiveState) this.animateFill();
-  }
+  };
 
   componentDidUpdate(prevProps) {
     if (prevProps.fill !== this.props.fill) {
@@ -33,35 +32,31 @@ export default class AnimatedGaugeProgress extends React.Component {
   animateFill() {
     const { tension, friction, onAnimationComplete, prefill } = this.props;
 
-    var chartFillAnimation = new Animated.Value(prefill || 0)
-    this.setState({chartFillAnimation})
+    var chartFillAnimation = new Animated.Value(prefill || 0);
+    this.setState({ chartFillAnimation });
 
-    Animated.spring(
-      chartFillAnimation,
-      {
-        toValue: this.props.fill,
-        tension,
-        friction
-      }
-    ).start(onAnimationComplete);
+    Animated.spring(chartFillAnimation, {
+      toValue: this.props.fill,
+      tension,
+      friction
+    }).start(onAnimationComplete);
   }
-  
-  render() {
-    const { fill, prefill, ...other } = this.props;
 
+  render() {
+    const { fill, prefill, animatedFill, ...other } = this.props;
     return (
       <AnimatedProgress
         {...other}
-        fill={this.state.chartFillAnimation}
-        />
-    )
+        fill={typeof fill === "object" ? fill : this.state.chartFillAnimation}
+      />
+    );
   }
 }
 
 AnimatedGaugeProgress.propTypes = {
   style: ViewPropTypes.style,
   size: PropTypes.number.isRequired,
-  fill: PropTypes.number,
+  fill: PropTypes.any,
   prefill: PropTypes.number,
   width: PropTypes.number.isRequired,
   tintColor: PropTypes.string,
@@ -69,8 +64,8 @@ AnimatedGaugeProgress.propTypes = {
   tension: PropTypes.number,
   friction: PropTypes.number,
   onAnimationComplete: PropTypes.func,
-  onLinearAnimationComplete: PropTypes.func,
-}
+  onLinearAnimationComplete: PropTypes.func
+};
 
 AnimatedGaugeProgress.defaultProps = {
   tension: 7,

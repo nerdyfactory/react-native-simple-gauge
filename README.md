@@ -28,6 +28,7 @@ import { AnimatedGaugeProgress, GaugeProgress } from 'react-native-simple-gauge'
   rotation={90}
   cropDegree={90}
   tintColor="#4682b4"
+  delay={0}
   backgroundColor="#b0c4de"
   stroke={[2, 2]} //For a equaly dashed line
   strokeCap="circle" />

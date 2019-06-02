@@ -35,3 +35,4 @@ npm-debug.log
 .idea
 
 yarn-error.log
+package-lock.json

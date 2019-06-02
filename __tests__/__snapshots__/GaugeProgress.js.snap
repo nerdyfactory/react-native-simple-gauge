@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders correctly 1`] = `
-<View
-  style={undefined}
->
+<View>
   <ARTSurfaceView
     style={
       Array [
@@ -114,9 +112,7 @@ exports[`renders correctly 1`] = `
 `;
 
 exports[`renders correctly with children components 1`] = `
-<View
-  style={undefined}
->
+<View>
   <ARTSurfaceView
     style={
       Array [
@@ -237,9 +233,6 @@ exports[`renders correctly with children components 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontSize": 20,
@@ -253,9 +246,7 @@ exports[`renders correctly with children components 1`] = `
 `;
 
 exports[`renders correctly with children function 1`] = `
-<View
-  style={undefined}
->
+<View>
   <ARTSurfaceView
     style={
       Array [
@@ -376,9 +367,6 @@ exports[`renders correctly with children function 1`] = `
     }
   >
     <Text
-      accessible={true}
-      allowFontScaling={true}
-      ellipsizeMode="tail"
       style={
         Object {
           "fontSize": 20,

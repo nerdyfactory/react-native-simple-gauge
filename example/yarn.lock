@@ -4853,10 +4853,8 @@ react-is@^16.8.1, react-is@^16.8.3, react-is@^16.8.4:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.8.6.tgz#5bbc1e2d29141c9fbdfed456343fe2bc430a6a16"
   integrity sha512-aUk3bHfZ2bRSVFFbbeVS4i+lNPZr3/WM5jT2J5omUVV1zzcs1nAaf3l51ctA5FFvCRbhrH0bdAsRRQddFJZPtA==
 
-react-native-simple-gauge@^0.1.11:
+"react-native-simple-gauge@file:..":
   version "0.1.11"
-  resolved "https://registry.yarnpkg.com/react-native-simple-gauge/-/react-native-simple-gauge-0.1.11.tgz#ceefb77ba36cb32203562f6732b365acb7f30ade"
-  integrity sha512-7uGJd8/JKK//KO2pYYJk5Xk9o3aMaXZbdFG3c33jSUXLI6mDQSPsr+LKY8ugx5swiJGd5WJLBIWWYLXD5122iw==
   dependencies:
     art "^0.10.2"
 

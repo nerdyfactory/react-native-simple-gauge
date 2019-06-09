@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest",
+    "postinstall": "rm -rf node_modules/react-native-simple-gauge/example"
   },
   "dependencies": {
     "react": "16.8.3",
     "react-native": "0.59.8",
-    "react-native-simple-gauge": "^0.1.11"
+    "react-native-simple-gauge": "file:.."
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

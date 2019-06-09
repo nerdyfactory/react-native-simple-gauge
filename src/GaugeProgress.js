@@ -6,25 +6,22 @@ import MetricsPath from 'art/metrics/path';
 const ActiveState = "active"
 
 export default class GaugeProgress extends React.Component {
-
-  state = {
-    show: true
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      isVisible: false,
+    };
   }
 
   componentDidMount() {
-    AppState.addEventListener('change', this._handleAppStateChange);
-  }
-
-  componentWillUnmount() {
-    AppState.removeEventListener('change', this._handleAppStateChange);
-  }
-
-  _handleAppStateChange = (nextAppState) => {
-    this.setState({show: nextAppState === ActiveState})
+    requestAnimationFrame(() => {
+      this.setState({
+        isVisible: true,
+      });
+    });
   }
 
   circlePath(cx, cy, r, startDegree, endDegree) {
-
     let p = Path();
     p.path.push(0, cx + r, cy);
     p.path.push(4, cx, cy, r, startDegree * Math.PI / 180, endDegree * Math.PI / 180, 1);
@@ -47,28 +44,28 @@ export default class GaugeProgress extends React.Component {
 
     const fill = this.extractFill(this.props.fill);
     const circlePath = this.circlePath(size / 2, size / 2, size / 2 - width / 2, 0, ((360 * 99.9 / 100) - cropDegree) * fill / 100);
-    const { show } =  this.state
+    if (!this.state.isVisible) {
+      return null;
+    }
     return (
       <View style={style}>
-        {!!show &&
-          <Surface
-            width={size}
-            height={size}
-            >
-            <Group rotation={rotation + cropDegree / 2} originX={size / 2} originY={size / 2}>
-              <Shape d={backgroundPath}
-                     strokeDash={stroke}
-                     stroke={backgroundColor}
-                     strokeWidth={width}
-                     strokeCap={strokeCap}/>
-              <Shape d={circlePath}
-                     strokeDash={stroke}
-                     stroke={tintColor}
-                     strokeWidth={width}
-                     strokeCap={strokeCap}/>
-            </Group>
-          </Surface>
-        }
+        <Surface
+          width={size}
+          height={size}
+          >
+          <Group rotation={rotation + cropDegree / 2} originX={size / 2} originY={size / 2}>
+            <Shape d={backgroundPath}
+                   strokeDash={stroke}
+                   stroke={backgroundColor}
+                   strokeWidth={width}
+                   strokeCap={strokeCap}/>
+            <Shape d={circlePath}
+                   strokeDash={stroke}
+                   stroke={tintColor}
+                   strokeWidth={width}
+                   strokeCap={strokeCap}/>
+          </Group>
+        </Surface>
         {typeof children === 'function' ? children(fill) : children}
       </View>
     )

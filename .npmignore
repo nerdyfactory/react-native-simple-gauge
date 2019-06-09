@@ -29,3 +29,7 @@ npm-debug.log
 
 example/
 screenshot.gif
+
+__tests__/
+.circleci/
+yarn-error.log

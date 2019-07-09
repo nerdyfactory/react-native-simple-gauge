@@ -55,10 +55,8 @@ export default class AnimatedGaugeProgress extends React.Component {
 
 AnimatedGaugeProgress.propTypes = {
   style: ViewPropTypes.style,
-  size: PropTypes.number.isRequired,
   fill: PropTypes.any,
   prefill: PropTypes.number,
-  width: PropTypes.number.isRequired,
   tintColor: PropTypes.string,
   backgroundColor: PropTypes.string,
   tension: PropTypes.number,

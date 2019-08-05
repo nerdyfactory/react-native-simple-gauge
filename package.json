@@ -1,6 +1,6 @@
 {
   "name": "react-native-simple-gauge",
-  "version": "0.1.11",
+  "version": "0.2.1",
   "description": "React Native component for gauge",
   "main": "src/index.js",
   "repository": {
@@ -17,9 +17,7 @@
     "art",
     "gauge"
   ],
-  "scripts": {
-    "test": "jest"
-  },
+  "scripts": { },
   "author": {
     "name": "vinay",
     "email": "vinay@nerdyfactory.com"
@@ -33,30 +31,8 @@
     "url": "https://github.com/nerdyfactory/react-native-simple-gauge/issues"
   },
   "homepage": "https://github.com/nerdyfactory/react-native-simple-gauge",
-  "dependencies": {
-    "art": "^0.10.2"
-  },
   "devDependencies": {
-    "react": "16.8.3",
-    "react-native": "0.59.8",
-    "@babel/core": "^7.4.5",
-    "@babel/runtime": "^7.4.5",
-    "babel-jest": "^24.8.0",
-    "jest": "^24.8.0",
-    "metro-react-native-babel-preset": "^0.54.1",
-    "react-test-renderer": "16.8.3"
-  },
-  "jest": {
-    "preset": "react-native",
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/example/"
-    ],
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules"
-    ],
-    "moduleNameMapper": {
-      "ReactNativeART": "<rootDir>/node_modules/react-native/Libraries/ART/ReactNativeART"
-    }
+    "@react-native-community/eslint-config": "^0.0.5",
+    "eslint": "^6.1.0"
   }
 }

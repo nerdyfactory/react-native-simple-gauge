@@ -2,17 +2,13 @@
  * Sample React Native App
  * https://github.com/facebook/react-native
  * @flow
+ * @format
  */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 
-import { AnimatedGaugeProgress, GaugeProgress } from 'react-native-simple-gauge';
+import { AnimatedGaugeProgress } from 'react-native-simple-gauge';
 
 export default class App extends Component {
   render() {
@@ -25,7 +21,8 @@ export default class App extends Component {
             fill={100}
             cropDegree={90}
             tintColor="#4682b4"
-            backgroundColor="#b0c4de" />
+            backgroundColor="#b0c4de"
+          />
         </View>
         <View style={styles.gaugeBottom}>
           <View style={styles.rowItem}>
@@ -36,7 +33,8 @@ export default class App extends Component {
               rotation={0}
               cropDegree={90}
               tintColor="#4682b4"
-              backgroundColor="#b0c4de" />
+              backgroundColor="#b0c4de"
+            />
           </View>
           <View style={styles.rowItem}>
             <AnimatedGaugeProgress
@@ -46,7 +44,8 @@ export default class App extends Component {
               rotation={180}
               cropDegree={90}
               tintColor="#4682b4"
-              backgroundColor="#b0c4de" />
+              backgroundColor="#b0c4de"
+            />
           </View>
           <View style={styles.rowItem}>
             <AnimatedGaugeProgress
@@ -56,7 +55,8 @@ export default class App extends Component {
               rotation={90}
               cropDegree={0}
               tintColor="#4682b4"
-              backgroundColor="#b0c4de" />
+              backgroundColor="#b0c4de"
+            />
           </View>
           <View style={styles.rowItem}>
             <AnimatedGaugeProgress
@@ -66,7 +66,8 @@ export default class App extends Component {
               rotation={0}
               cropDegree={180}
               tintColor="#4682b4"
-              backgroundColor="#b0c4de" />
+              backgroundColor="#b0c4de"
+            />
           </View>
           <View style={styles.rowItem}>
             <AnimatedGaugeProgress
@@ -77,7 +78,8 @@ export default class App extends Component {
               cropDegree={180}
               tintColor="#4682b4"
               backgroundColor="#b0c4de"
-              strokeCap="circle" />
+              strokeCap="circle"
+            />
           </View>
         </View>
       </View>
@@ -90,7 +92,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
   },
   gaugeTop: {
     padding: 20,

@@ -7,13 +7,19 @@ Based on [react-native-circular-progress](https://github.com/bgryszko/react-nati
 ![image](screenshot.gif)  
 
 ## Requirement
-RN 0.45+
+RN 0.60+
 
-RN <= 0.44 supported by 0.1.2
+* RN <= 0.59 supported by 0.1.11
+* RN <= 0.44 supported by 0.1.2
 
 ## Install  
 1) `npm i --save react-native-simple-gauge`  
-2) Link the ART library to your ReactNative project ([how to link a library](https://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)). You'll find the React ART library in `node_modules/react-native/Libraries/ART/ART.xcodeproj`
+2) Link the ART library to your ReactNative project for ios
+add below line to `ios/Podfile`
+```
+pod 'React-ART', :path => '../node_modules/react-native/Libraries/ART'
+```
+and run `pod install` in `ios` directory
 ## Usage  
 
 ```js

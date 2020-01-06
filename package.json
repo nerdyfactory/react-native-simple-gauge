@@ -1,6 +1,6 @@
 {
   "name": "react-native-simple-gauge",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "React Native component for gauge",
   "main": "src/index.js",
   "repository": {

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, Platform, ViewPropTypes, AppState } from 'react-native';
-import { Surface, Shape, Path, Group } from '../../react-native/Libraries/ART/ReactNativeART';
+import { Surface, Shape, Path, Group } from '@react-native-community/art';
 import MetricsPath from 'art/metrics/path';
 const ActiveState = "active"
 

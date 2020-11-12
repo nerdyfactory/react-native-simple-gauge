@@ -27,6 +27,7 @@ type AnimatedGaugeProgressProps = GaugeProgressProps & {
   prefill?: number;
   tension?: number;
   friction?: number;
+  useNativeDriver?: boolean;
   onAnimationComplete?: (callback: { finished: boolean }) => void;
 };
 type AnimatedGaugeProgressState = {

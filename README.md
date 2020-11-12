@@ -13,12 +13,12 @@ RN 0.60+
 * RN <= 0.44 supported by 0.1.2
 
 ## Install  
-#RN 0.62+
+### RN 0.62+
 1) `npm i --save react-native-simple-gauge`
 2) `npm i --save @react-native-community/art`
 3) run `pod install` in `ios` directory
 
-#RN 0.60 - 0.61
+### RN 0.60 - 0.61
 1) `npm i --save react-native-simple-gauge`  
 2) Link the ART library to your ReactNative project for ios
 add below line to `ios/Podfile`

@@ -1,5 +1,5 @@
 {
-  "name": "react-native-simple-gauge",
+  "name": "react-native-simple-gauge-ts",
   "version": "0.3.1",
   "description": "React Native component for gauge",
   "main": "src/index.js",

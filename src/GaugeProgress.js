@@ -143,22 +143,58 @@ export default class GaugeProgress extends React.Component {
               strokeCap={strokeCap}
             />
           </Group>
-          <Group x={originX - 120} y={originY - 10}>
+          <Group x={originX + 180} y={originY - 35}>
             <Text
-              font={`13px "Helvetica Neue", "Helvetica", Arial`}
-              fill="#FFF"
-              alignment="center"
-            >
-              5
-            </Text>
-          </Group>
-          <Group x={originX + 180} y={originY - 10}>
-            <Text
-              font={`13px "Helvetica Neue", "Helvetica", Arial`}
-              fill="#FFF"
+              font={`14px "Roboto-Regular", "Roboto", Arial`}
+              fill="#c7c7cc"
               alignment="center"
             >
               40
+            </Text>
+          </Group>
+          <Group x={originX - 120} y={originY - 35}>
+            <Text
+              font={`14px "Roboto-Regular", "Roboto", Arial`}
+              fill="#c7c7cc"
+              alignment="center"
+            >
+              10
+            </Text>
+          </Group>
+          <Group x={originX + 90} y={originY - 125}>
+            <Text
+              font={`14px "Roboto-Regular", "Roboto", Arial`}
+              fill="#c7c7cc"
+              alignment="center"
+            >
+              30
+            </Text>
+          </Group>
+          <Group x={originX - 30} y={originY - 125}>
+            <Text
+              font={`14px "Roboto-Regular", "Roboto", Arial`}
+              fill="#c7c7cc"
+              alignment="center"
+            >
+              20
+            </Text>
+          </Group>
+          <Group x={originX - 110} y={originY + 70}>
+            <Text
+              font={`14px "Roboto-Regular", "Roboto", Arial`}
+              fill="#c7c7cc"
+              alignment="center"
+            >
+              0
+            </Text>
+          </Group>
+          <Group x={originX + 180} y={originY + 70}>
+            <Text
+              font={`14px "Roboto-Regular", "Roboto", Arial`}
+              fill="#c7c7cc"
+              alignment="center"
+            >
+              Max
             </Text>
           </Group>
         </Surface>

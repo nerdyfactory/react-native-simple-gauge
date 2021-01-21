@@ -116,8 +116,8 @@ export default class GaugeProgress extends React.Component {
     const originX = vw < 3.9 ? (size + 10 * vw) / 2 : (size + 8 * vw) / 2;
     const originY = (size + 8 * vh) / 2;
 
-    console.log('=== originX ===', originX);
-    console.log('=== originY ===', originY);
+    // console.log('=== originX ===', originX);
+    // console.log('=== originY ===', originY);
 
     return (
       <View style={style}>
@@ -143,7 +143,7 @@ export default class GaugeProgress extends React.Component {
               strokeCap={strokeCap}
             />
           </Group>
-          <Group x={originX + 180} y={originY - 35}>
+          <Group x={originX + 174} y={originY - 35}>
             <Text
               font={`14px "Roboto-Regular", "Roboto", Arial`}
               fill="#c7c7cc"
@@ -152,7 +152,7 @@ export default class GaugeProgress extends React.Component {
               40
             </Text>
           </Group>
-          <Group x={originX - 120} y={originY - 35}>
+          <Group x={originX - 110} y={originY - 35}>
             <Text
               font={`14px "Roboto-Regular", "Roboto", Arial`}
               fill="#c7c7cc"
@@ -179,7 +179,7 @@ export default class GaugeProgress extends React.Component {
               20
             </Text>
           </Group>
-          <Group x={originX - 110} y={originY + 70}>
+          <Group x={originX - 107} y={originY + 70}>
             <Text
               font={`14px "Roboto-Regular", "Roboto", Arial`}
               fill="#c7c7cc"
@@ -188,7 +188,7 @@ export default class GaugeProgress extends React.Component {
               0
             </Text>
           </Group>
-          <Group x={originX + 180} y={originY + 70}>
+          <Group x={originX + 175} y={originY + 70}>
             <Text
               font={`14px "Roboto-Regular", "Roboto", Arial`}
               fill="#c7c7cc"

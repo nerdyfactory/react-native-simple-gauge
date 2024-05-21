@@ -13,11 +13,11 @@ export default class AnimatedGaugeProgress extends React.Component {
 
   componentDidMount() { 
     this.animateFill();
-    AppState.addEventListener('change', this._handleAppStateChange);
+    this.subscription = AppState.addEventListener('change', this._handleAppStateChange);
   }
 
   componentWillUnmount() {
-    AppState.removeEventListener('change', this._handleAppStateChange);
+    this.subscription.remove()
   }
 
   _handleAppStateChange = (nextAppState) => {
